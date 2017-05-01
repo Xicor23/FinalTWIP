@@ -6,7 +6,8 @@ public class Main {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new FileReader("Scores"));
         ArrayList<String> words = new ArrayList<>();
-        String lineJustFetched = null;
+        ArrayList<String> newwords = new ArrayList<>();
+        String lineJustFetched=null;
         String[] wordsArray;
         br.readLine();
         while(true){
@@ -22,8 +23,22 @@ public class Main {
                 }
             }
         }
+        for(int i = 0;i<words.size();i++){
+            wordsArray=words.get(i).split("\\+");
+            if(wordsArray.length==0){
+                newwords.add(wordsArray[0].trim());
+            }
+            else{
+                for(int j =0;j<wordsArray.length;j++){
+                    newwords.add(wordsArray[j].trim());
+                }
+            }
+        }
+        for(int i = 0;i<newwords.size();i++){
+            
+        }
 
-        for(String each : words){
+        for(String each : newwords){
             System.out.println(each);
         }
 
