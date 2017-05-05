@@ -4,24 +4,21 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new FileReader("Scores"));
+        Scanner br = new Scanner(new File("Scores"));
         ArrayList<String> words = new ArrayList<>();
         ArrayList<String> newwords = new ArrayList<>();
         String lineJustFetched=null;
         String[] wordsArray;
-        br.readLine();
-        while(true){
-            lineJustFetched = br.readLine();
-            if(lineJustFetched == null){
-                break;
-            }else{
+        br.nextLine();
+        while(br.hasNextLine()){
+            lineJustFetched = br.next();
                 wordsArray = lineJustFetched.split("\t");
                 for(String each : wordsArray){
                     if(!"".equals(each)){
                         words.add(each);
                     }
                 }
-            }
+
         }
         for(int i = 0;i<words.size();i++){
             wordsArray=words.get(i).split("\\+");
