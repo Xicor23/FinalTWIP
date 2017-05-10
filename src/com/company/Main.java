@@ -4,14 +4,14 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) throws IOException{
-        Scanner br = new Scanner(new File("Scores"));
+        Scanner one = new Scanner(new File("Scores"));
         ArrayList<String> words = new ArrayList<>();
         ArrayList<String> newwords = new ArrayList<>();
         String lineJustFetched=null;
         String[] wordsArray;
-        br.nextLine();
-        while(br.hasNextLine()){
-            lineJustFetched = br.next();
+        one.nextLine();
+        while(one.hasNextLine()){
+            lineJustFetched = one.nextLine();
                 wordsArray = lineJustFetched.split("\t");
                 for(String each : wordsArray){
                     if(!"".equals(each)){
@@ -21,24 +21,14 @@ public class Main {
 
         }
         for(int i = 0;i<words.size();i++){
-            wordsArray=words.get(i).split("\\+");
-            if(wordsArray.length==0){
-                newwords.add(wordsArray[0].trim());
-            }
-            else{
-                for(int j =0;j<wordsArray.length;j++){
-                    newwords.add(wordsArray[j].trim());
-                }
-            }
-        }
-        for(int i = 0;i<newwords.size();i++){
+            if(words.get(i).contains("+")){
             
+            }
         }
 
-        for(String each : newwords){
+        for(String each : words){
             System.out.println(each);
         }
-
-        br.close();
+        one.close();
     }
 }
