@@ -6,8 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException{
         Scanner one = new Scanner(new File("Scores"));
         ArrayList<String> words = new ArrayList<>();
-        ArrayList<String> newwords = new ArrayList<>();
-        String lineJustFetched=null;
+        String lineJustFetched;
         String[] wordsArray;
         one.nextLine();
         while(one.hasNextLine()){
